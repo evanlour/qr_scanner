@@ -1,0 +1,10 @@
+name: qr_scanner
+channels:
+  - conda-forge
+dependencies:
+  - python = 3.9.19
+  - numexpr = 2.8.4
+  - pandas = 2.2.2
+  - numpy = 1.26.4
+  - qrcode = 7.4.2
+  - opencv = 4.9.0
