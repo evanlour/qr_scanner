@@ -159,7 +159,10 @@ class newEmployeeWindow(QWidget): #The popup window when we want to add an emplo
 
     def acceptButtonFunc(self, main): #When we accept, we will try to create the employee data
         main.consoleLabel.addText("Trying to add new employee!")
-        createUserId(main, self.firstNameLine.text(), self.lastNameLine.text(), self.emailLine.text(), self.phoneLine.text())
+        if(self.firstNameLine.text() == "" or self.lastNameLine.text() == "" or self.emailLine.text() == "" or self.phoneLine.text() == ""):
+            main.consoleLabel.addText("Incomplete form, abandoning new employee creation")
+        else:
+            createUserId(main, self.firstNameLine.text(), self.lastNameLine.text(), self.emailLine.text(), self.phoneLine.text())
         self.close()
 
     def rejectButtonFunc(self, main): #If we accidentally pressed the create new employee, this will be the cancel button
