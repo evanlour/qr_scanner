@@ -1,7 +1,7 @@
 # qrScanner
 # CODE IS WORKING AND CURRENTLY BEING TESTED
 # In order to run the program:
-0) (If you ran the old testing version) open miniconda and type conda remove --name qr_scanner -all
+0) (If you ran the old testing version) open miniconda and type conda remove --name qr_scanner --all
 1) Download miniconda from here: https://docs.anaconda.com/free/miniconda/index.html
 2) Install miniconda(choose the default options in every step)
 3) Import the project to the desired inventory
