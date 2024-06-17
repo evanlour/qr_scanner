@@ -30,24 +30,24 @@ def createUserId(Main, employeeFirstName, employeeLastName, employeeEmail, emplo
     temp_df = df.loc[df['employee_first_name'] == employeeFirstName]
     if employeeLastName in temp_df.values:
         Main.consoleLabel.addText('Employee already present, if he is not in the system please contract an administrator')
-    
-    if(len(df) == 0):
-        employeeId = 1
     else:
-        employeeId = df.index[-1] + 1
-        
-    employeeAlias = employeeLastName[0] + employeeFirstName[0] + str(employeeId)
-    employeeInfo = pd.DataFrame([{"employee_id" : employeeId, #create a temporary dataframe so we can merge it with the existing one
-                     "employee_first_name" : employeeFirstName,
-                     "employee_last_name" : employeeLastName,
-                     "employee_alias" : employeeAlias,
-                     "employee_email" : employeeEmail,
-                     "employee_phone" : employeePhone}])
-    employeeInfo = employeeInfo.set_index('employee_id')
-    df = pd.concat([df, employeeInfo], axis=0) #We add the employee to the main employee table
-    createQr(employeeAlias)
-    Main.consoleLabel.addText("The employee " + employeeFirstName + " " + employeeLastName + " has been added to the employees table")
-    df.to_csv('Data\\Employees\\employees.csv')
+        if(len(df) == 0):
+            employeeId = 1
+        else:
+            employeeId = df.index[-1] + 1
+            
+        employeeAlias = employeeLastName[0] + employeeFirstName[0] + str(employeeId)
+        employeeInfo = pd.DataFrame([{"employee_id" : employeeId, #create a temporary dataframe so we can merge it with the existing one
+                        "employee_first_name" : employeeFirstName,
+                        "employee_last_name" : employeeLastName,
+                        "employee_alias" : employeeAlias,
+                        "employee_email" : employeeEmail,
+                        "employee_phone" : employeePhone}])
+        employeeInfo = employeeInfo.set_index('employee_id')
+        df = pd.concat([df, employeeInfo], axis=0) #We add the employee to the main employee table
+        createQr(employeeAlias)
+        Main.consoleLabel.addText("The employee " + employeeFirstName + " " + employeeLastName + " has been added to the employees table")
+        df.to_csv('Data\\Employees\\employees.csv')
 
 def createDayTable(directory): #CSV blueprint for our daily data
     columns = ['DateTime', 'employee_alias', 'employee_arrival', 'arrival_deadline', 'employee_departure', 'departure_deadline']
