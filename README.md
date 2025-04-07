@@ -1,22 +1,25 @@
-# qrScanner
-# CODE IS WORKING AND CURRENTLY BEING TESTED
-# In order to run the program:
-0) (If you ran the old testing version) open miniconda and type conda remove --name qr_scanner --all
-1) Download miniconda from here: https://docs.anaconda.com/free/miniconda/index.html
-2) Install miniconda(choose the default options in every step)
-3) Import the project to the desired inventory
-4) Run the install.bat
-5) After the program is finished, you can now open the run.bat
-6) If the environment dependencies are updated, install.bat will need to be rerun, although it seems unlikely to happen
+# qr_scanner
+This is a program that enables the creation and monitoring of custom employee qr codes. It is extremely simple on purpose in order
+to highlight the ease of use and expandability of the pyqt5 and opencv libraries, along as show their strengths. Along with the python files, 
+an environment.yaml file is provided in order to install the required environment.
+## Dependencies
+- A conda installation
+- Make sure that you have the following c++ redistr installed https://www.microsoft.com/en-us/download/details.aspx?id=40784
+## How to install
+First, clone the repo. After, type:
+~~~
+conda env create --file environment.yaml
+conda activate qr_scanner
+~~~
+And you are set to run the main.py file
 
-This program uses a pc camera to detect and decode qr images in real time, now with GUI
+## How the program works
+This program uses a pc camera to detect and decode qr images in real time
 The application of this program is guided towards a company that needs to keep in check with arrival and departure times
 Everything is done with button pressing, except when adding a new employee, where you need to type the info
 All the data is saved under the "Data" folder, which contains the "Employees" and "Stats" folders
 The "Employees" folder will hold all the current employee's data, as well as the qr codes they need to scan in .png form
 The "Data" folder holds all arrival and departure data in Year/Month/Day form
-If any bug is found, message me to try and fix it
 
-Additional Info:
-- The numexpr=2.8.4 is not actually needed for the project to work, we add it to suppress a warning that the default 2.7.3 version provides
-- If it throws a nasty error make sure that you have the following c++ redistr installed https://www.microsoft.com/en-us/download/details.aspx?id=40784
+## License
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
