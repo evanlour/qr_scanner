@@ -8,3 +8,6 @@ dependencies:
   - numpy = 1.26.4
   - qrcode = 7.4.2
   - opencv = 4.9.0
+  - pyqt5 = 5.15.11
+  - pyqrcode = 1.2.1
+  - pyzbar = 0.1.9
